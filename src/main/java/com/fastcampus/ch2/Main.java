@@ -6,6 +6,7 @@ public class Main {
         System.out.println(1);
         System.out.println(2);
 
+
         try {
 //            Exception e = new Exception();
 //            throw e;
@@ -14,7 +15,14 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("예외메시지 : " + e.getMessage());
+            System.out.println(method());
         }
         System.out.println("프로그램이 정상 종료되었음.");
+
     }
+
+    public static String method() {
+        return "지금은 실습";
+    }
+
 }
