@@ -1,21 +1,20 @@
 package com.fastcampus.ch3.di1;
 
-import org.apache.catalina.Engine;
-
 import java.io.FileReader;
 import java.util.Properties;
 
 class Car{}
 class SportsCar extends Car{}
 class Truck extends Car{}
+class Door{}
 
 
 public class Main {
     public static void main(String[] args) throws Exception {
         Car car = (Car) getObject("car");
-        Engine engine = (Engine) getObject("engine");
+        Door door = (Door) getObject("door");
         System.out.println("car = " + car);
-        System.out.println("engine = " + engine);
+        System.out.println("door = " + door);
     }
 
     static Object getObject(String key) throws Exception {
