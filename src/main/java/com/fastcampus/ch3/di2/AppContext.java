@@ -49,7 +49,7 @@ public class AppContext {
 
     private void doResource() {
         for (Object bean : map.values()){
-            for (Field fld : bean.getClass().getDeclaredField()){
+            for (Field fld : bean.getClass().getDeclaredFields()){
                 if (fld.getAnnotation(Resource.class)!=null)
                     try {
                         fld.set(bean, getBean(fld.getType()));
@@ -62,7 +62,7 @@ public class AppContext {
 
     private void doAutowired() {
         for (Object bean : map.values()){
-            for (Field fld : bean.getClass().getDeclaredField()){
+            for (Field fld : bean.getClass().getDeclaredFields()){
                 if (fld.getAnnotation(Autowired.class)!=null)
                     try {
                         fld.set(bean, getBean(fld.getType()));
